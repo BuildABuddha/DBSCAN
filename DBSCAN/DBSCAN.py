@@ -119,12 +119,18 @@ class DBSCAN(object):
 class KDBSCAN(DBSCAN):
     def __init__(self, k, min_neighbors, metric='euclidean', max_tries=20):
         """
-        An algorithm similar to DBSCAN, except 
+        An algorithm similar to DBSCAN, except it takes an input of K instead of epsilon. It then uses a binary search
+        pattern to find a value of epsilon that results in K clusters.
 
         The distance metric can be ‘braycurtis’, ‘canberra’, ‘chebyshev’, ‘cityblock’,
         ‘correlation’, ‘cosine’, ‘dice’, ‘euclidean’, ‘hamming’, ‘jaccard’, ‘jensenshannon’,
         ‘kulsinski’, ‘mahalanobis’, ‘matching’, ‘minkowski’, ‘rogerstanimoto’, ‘russellrao’,
         ‘seuclidean’, ‘sokalmichener’, ‘sokalsneath’, ‘sqeuclidean’, or ‘yule’.
+
+        :param k: The number of clusters to aim for in the final result.
+        :param min_neighbors: The number of neighbors a point must have to start a cluster.
+        :param metric: The metric to be used in the distance calculation. Default is 'euclidean'.
+        :param max_tries: Number of passes the algorithm should make at calculating epsilon before quitting.
         """
         self.labels = []
         self.k = k  # Number of groups to be made
