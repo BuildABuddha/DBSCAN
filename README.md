@@ -1,5 +1,5 @@
 # About:
-This is a recreation of the DBSCAN algorithm using only scipy as a dependency. 
+This is a recreation of the DBSCAN algorithm using only scipy as a dependency. [Click here to read more about this project.](https://buildabuddha.github.io/2020-07-28-dbscan/)
 
 This was done for the first 'build week' of the Computer Science portion of my Lambda School education. 
 
